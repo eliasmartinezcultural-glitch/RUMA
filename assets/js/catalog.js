@@ -1,25 +1,61 @@
 /*
  * LA RONDA — Catálogo maestro
- * Solo incorporar materiales terminados, alojados dentro del repositorio
- * y con derechos de redistribución verificados.
- *
- * Ejemplo de registro (no publicar hasta completar y verificar):
- * {
- *   id: "guia-ejemplo",
- *   title: "Título del material",
- *   author: "Autor o institución",
- *   category: "aprender",
- *   description: "Descripción breve y fiel.",
- *   format: "PDF",
- *   size: "2 MB",
- *   file: "assets/archivos/aprender/archivo.pdf",
- *   preview: "assets/vistas-previas/archivo.jpg",
- *   license: "CC BY 4.0",
- *   credit: "Atribución requerida por la licencia",
- *   verified: true
- * }
+ * Publicar solo archivos locales completos, con autoría y permiso documentados.
+ * "verified: true" significa que el archivo y sus derechos fueron revisados.
  */
-window.LA_RONDA_CATALOG = [];
+window.LA_RONDA_CATALOG = [
+  {
+    id: "organizador-semanal",
+    title: "Mi semana — organizador imprimible",
+    author: "Ocarina Producciones",
+    category: "cotidiana",
+    description: "Una hoja A4 sencilla para anotar tareas, compromisos y pequeños pendientes de cada día.",
+    format: "SVG imprimible",
+    size: "1 página A4",
+    pages: "1",
+    file: "assets/archivos/papeleria/organizador-semanal.svg",
+    preview: "assets/archivos/papeleria/organizador-semanal.svg",
+    license: "Uso personal y educativo gratuito; no autoriza reventa ni redistribución comercial.",
+    credit: "Material original de Ocarina Producciones.",
+    source: "Creación original para La Ronda.",
+    dateChecked: "2026-11-03",
+    verified: true
+  },
+  {
+    id: "etiquetas-semillas",
+    title: "Etiquetas para semillas y plantines",
+    author: "Ocarina Producciones",
+    category: "naturaleza",
+    description: "Ocho etiquetas recortables para identificar qué sembraste y cuándo. Imprimí, completá y colocá en tus macetas.",
+    format: "SVG imprimible",
+    size: "1 página A4",
+    pages: "1",
+    file: "assets/archivos/naturaleza/etiquetas-para-semillas.svg",
+    preview: "assets/archivos/naturaleza/etiquetas-para-semillas.svg",
+    license: "Uso personal y educativo gratuito; no autoriza reventa ni redistribución comercial.",
+    credit: "Material original de Ocarina Producciones.",
+    source: "Creación original para La Ronda.",
+    dateChecked: "2026-11-03",
+    verified: true
+  },
+  {
+    id: "cuaderno-observacion",
+    title: "Mi cuaderno de observación",
+    author: "Ocarina Producciones",
+    category: "infancias",
+    description: "Una actividad para que chicos y chicas dibujen algo que observaron, anoten dónde lo encontraron y formulen preguntas.",
+    format: "SVG imprimible",
+    size: "1 página A4",
+    pages: "1",
+    file: "assets/archivos/infancias/mi-cuaderno-de-observacion.svg",
+    preview: "assets/archivos/infancias/mi-cuaderno-de-observacion.svg",
+    license: "Uso personal y educativo gratuito; no autoriza reventa ni redistribución comercial.",
+    credit: "Material original de Ocarina Producciones.",
+    source: "Creación original para La Ronda.",
+    dateChecked: "2026-11-03",
+    verified: true
+  }
+];
 
 window.LA_RONDA_CATEGORIES = [
   {id:"lecturas",name:"Lecturas",description:"Libros, cuentos, poesía y relatos",icon:"📚",tone:"sage"},
@@ -29,6 +65,6 @@ window.LA_RONDA_CATEGORIES = [
   {id:"aprender",name:"Aprender",description:"Guías, fichas e infografías",icon:"🌱",tone:"blue"},
   {id:"naturaleza",name:"Naturaleza",description:"Plantas, animales y ambiente",icon:"🌼",tone:"peach"},
   {id:"infancias",name:"Infancias y juegos",description:"Actividades, cuentos y pasatiempos",icon:"🪁",tone:"green"},
-  {id:"cotidiana",name:"Vida cotidiana",description:"Cocina, hogar y manualidades",icon:"🏡",tone:"pink"},
+  {id:"cotidiana",name:"Vida cotidiana",description:"Organización, cocina y hogar",icon:"🏡",tone:"pink"},
   {id:"chañar",name:"Rincón chañarense",description:"Memoria, cultura y territorio local",icon:"🌾",tone:"sand"}
 ];
