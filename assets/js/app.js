@@ -105,6 +105,9 @@
       const credit = document.createElement("small");
       credit.className = "material-credit";
       credit.textContent = item.credit;
+      const rights = document.createElement("small");
+      rights.className = "material-rights";
+      rights.textContent = item.license;
       const actions = document.createElement("div");
       actions.className = "material-actions";
       const view = document.createElement("a");
@@ -119,7 +122,7 @@
       download.setAttribute("download", "");
       download.textContent = "Descargar";
       actions.append(view, download);
-      card.append(previewLink, title, description, meta, credit, actions);
+      card.append(previewLink, title, description, meta, credit, rights, actions);
       materials.append(card);
     });
   }
