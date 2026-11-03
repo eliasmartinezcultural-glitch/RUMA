@@ -3,42 +3,48 @@
 
 Biblioteca digital comunitaria impulsada por Ocarina Producciones, con San Patricio del Chañar como punto de partida.
 
-## Estado
-**Fase 2 — Primeros materiales imprimibles publicados.**
+## Estado del proyecto
+**Fase 3 — Arquitectura editorial y rediseño integral.**
 
-La biblioteca ya contiene tres materiales originales de Ocarina Producciones:
-- Organizador semanal imprimible.
+La portada ahora organiza la experiencia en:
+- Presentación y acceso directo.
+- Nueve puertas temáticas con ilustraciones originales locales.
+- Buscador y filtros por estantes.
+- Colección de materiales con vista previa, ficha, autoría y condiciones.
+- Guía de uso en tres pasos.
+- Rincón chañarense.
+- Principios de la biblioteca.
+- Preguntas frecuentes.
+- Cajita de colaboración voluntaria.
+
+## Materiales disponibles
+- Mi semana — organizador imprimible.
 - Etiquetas para semillas y plantines.
-- Cuaderno de observación para infancias.
+- Mi cuaderno de observación.
 
-Se identifican claramente como materiales originales. El catálogo externo se ampliará únicamente cuando la redistribución esté permitida y documentada. No se incorporan obras ficticias ni enlaces que manden a otro sitio para obtener el archivo.
+Son materiales originales de Ocarina Producciones. Se identifican como tales y se ofrecen para uso personal y educativo gratuito bajo las condiciones indicadas en cada ficha.
 
 ## Ver el sitio
 Cuando GitHub Pages esté habilitado:
 https://eliasmartinezcultural-glitch.github.io/RUMA/
 
-## Estructura
-- `index.html`: portada y estructura principal.
-- `assets/css/styles.css`: diseño responsive y fichas de materiales.
+## Estructura técnica
+- `index.html`: portada y secciones editoriales.
+- `assets/css/styles.css`: sistema visual responsive.
 - `assets/js/catalog.js`: categorías y catálogo maestro.
 - `assets/js/app.js`: búsqueda, filtros, vistas previas y descargas.
-- `assets/archivos/`: archivos descargables autorizados.
+- `assets/ilustraciones/`: nueve ilustraciones SVG originales para las categorías.
+- `assets/archivos/`: materiales descargables.
 - `REGISTRO-DERECHOS.md`: autoría, procedencia y permisos.
 - `REGLAMENTO-LA-RONDA.md`: reglas fundacionales.
+- `ARQUITECTURA.md`: mapa del sitio y criterios técnicos.
+- `GUIA-VISUAL.md`: identidad y criterios de diseño.
 
-## Incorporar un material
-1. Obtener el archivo final y comprobar que abre correctamente.
-2. Verificar que se permite redistribuirlo y alojarlo.
-3. Registrar autor/titular, procedencia, licencia y evidencia del permiso.
-4. Guardar el archivo dentro de `assets/archivos/`.
-5. Preparar una vista previa local cuando corresponda.
-6. Completar todos los campos de `assets/js/catalog.js` y usar `verified: true` solo tras la revisión.
-7. Comprobar manualmente que la descarga funciona en la página publicada.
-
-El motor descarta registros sin verificación, archivo local, vista previa local, autoría y datos de derechos.
+## Principios de publicación
+Un material solo se publica si el archivo está alojado en La Ronda, abre correctamente, tiene una ficha completa y su redistribución está permitida. La gratuidad de consulta de una obra no equivale a permiso de republicación.
 
 ## Tecnologías
-HTML, CSS y JavaScript sin frameworks, backend ni base de datos. No se cargan fuentes, imágenes ni archivos de contenido desde servicios externos.
+HTML, CSS y JavaScript sin frameworks, backend ni base de datos. No se cargan fuentes ni imágenes desde servicios externos. Las funciones principales trabajan en el navegador.
 
 ## Responsable
 Ocarina Producciones · San Patricio del Chañar, Neuquén.
