@@ -3,76 +3,122 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f3e9">
-  <meta name="description" content="La Ronda: biblioteca digital comunitaria, abierta y gratuita. Lo que compartimos nos enriquece.">
+  <meta name="theme-color" content="#f5f1e7">
+  <meta name="description" content="La Ronda: biblioteca digital comunitaria. Materiales para leer, aprender, crear, imprimir y compartir.">
+  <meta property="og:title" content="La Ronda — Biblioteca comunitaria">
+  <meta property="og:description" content="Lo que compartimos nos enriquece. Una biblioteca abierta, gratuita y cercana.">
   <title>La Ronda — Biblioteca comunitaria</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/ilustraciones/puerta-chañar.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="top-note"><span>✿</span> Una biblioteca abierta, hecha para compartir <span class="top-note-place">San Patricio del Chañar · Neuquén</span></div>
   <header class="site-header">
     <a class="brand" href="./" aria-label="La Ronda, inicio">
-      <span class="brand-mark" aria-hidden="true">✿</span>
-      <span><strong>la ronda</strong><small>biblioteca comunitaria</small></span>
+      <span class="brand-flower" aria-hidden="true">✿</span>
+      <span class="brand-name">la ronda<small>biblioteca comunitaria</small></span>
     </a>
     <nav class="main-nav" aria-label="Navegación principal">
-      <a href="#coleccion">Explorar</a>
-      <a href="#chañar">Rincón chañarense</a>
-      <a href="#colaborar">Colaborar</a>
+      <a href="#puertas">Explorar</a><a href="#colecciones">Colecciones</a><a href="#chañar">Rincón local</a><a href="#colaborar">La cajita</a>
     </nav>
+    <a class="header-cta" href="#puertas">Entrar a la biblioteca <span aria-hidden="true">↗</span></a>
   </header>
 
   <main id="contenido">
     <section class="hero">
-      <div class="hero-copy">
-        <span class="eyebrow"><span class="eyebrow-dot"></span> Un espacio abierto para compartir</span>
-        <h1>Las cosas lindas<br>son mejores <em>en ronda.</em></h1>
-        <p class="hero-lead">Una biblioteca para descubrir, leer, mirar, imprimir y llevarte materiales útiles y hermosos. Abierta para todos, siempre.</p>
-        <a class="button button-primary" href="#coleccion">Entrar a la biblioteca <span aria-hidden="true">↘</span></a>
-        <p class="hero-note">Sin registro · Sin pagos · Sin vueltas</p>
+      <div class="hero-wash wash-one"></div><div class="hero-wash wash-two"></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow"><i></i> Un lugar para descubrir y compartir</span>
+          <h1>Siempre hay algo<br>lindo para <em>encontrar.</em></h1>
+          <p class="hero-lead">Libros, ideas, mapas, juegos, láminas y recursos para llevar a casa. Una biblioteca sencilla, abierta y gratuita para recorrer a tu manera.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#puertas">Recorrer la biblioteca <span>↓</span></a><a class="text-link" href="#como-funciona">¿Cómo funciona? <span>→</span></a></div>
+          <div class="hero-promises"><span>♡ Sin registro</span><span>♡ Sin pagos</span><span>♡ Para compartir</span></div>
+        </div>
+        <div class="hero-scene" aria-label="Ilustración de libros, flores y una taza sobre una mesa" role="img">
+          <div class="scene-sun"></div><div class="scene-flower flower-a">✿</div><div class="scene-flower flower-b">✿</div>
+          <div class="scene-book book-a"><span>IDEAS<br>PARA<br>COMPARTIR</span></div>
+          <div class="scene-book book-b"><span>LA<br>RONDA</span><b>✿</b></div>
+          <div class="scene-cup"><i></i><b></b></div><div class="scene-leaf leaf-a"></div><div class="scene-leaf leaf-b"></div>
+          <div class="scene-caption">abrí una puerta,<br>encontrá tu mundo</div>
+        </div>
       </div>
-      <div class="hero-art" aria-label="Ilustración decorativa de libros y flores" role="img">
-        <div class="sun"></div><div class="leaf leaf-one"></div><div class="leaf leaf-two"></div>
-        <div class="book book-back"></div><div class="book book-front"><span>LO QUE<br>COMPARTIMOS<br>NOS ENRIQUECE</span><i>✿</i></div>
-        <span class="spark spark-one">✳</span><span class="spark spark-two">✦</span><span class="art-caption">un lugar para<br>encontrarnos</span>
-      </div>
-      <div class="hero-bottom"><span>HECHA CON CARIÑO EN SAN PATRICIO DEL CHAÑAR</span><span>Ocarina Producciones · 2026</span></div>
+      <div class="hero-ribbon"><span>✳</span> Lo que compartimos nos enriquece <span>✳</span><small>Un proyecto de Ocarina Producciones</small></div>
     </section>
 
-    <section class="section collection-section" id="coleccion">
-      <div class="section-heading">
-        <div><span class="eyebrow">La biblioteca</span><h2>¿Qué te gustaría encontrar?</h2></div>
-        <p>Elegí una puerta y empezá a recorrer.</p>
+    <section class="welcome-strip" aria-label="Bienvenida">
+      <div><span class="welcome-icon">☀</span><p><strong>Pasá, estás en tu casa.</strong><br>Acá no hace falta saber mucho de tecnología: elegí, mirá y descargá.</p></div>
+      <a href="#puertas">Ver todas las puertas <span>→</span></a>
+    </section>
+
+    <section class="doors-section section-shell" id="puertas">
+      <div class="section-intro">
+        <div><span class="eyebrow">La biblioteca por dentro</span><h2>¿Qué te gustaría<br><em>encontrar hoy?</em></h2></div>
+        <p>Nueve caminos para recorrer. Elegí el que más te guste; siempre podés volver y probar otro.</p>
       </div>
-      <div class="search-wrap">
-        <span aria-hidden="true">⌕</span>
-        <label class="sr-only" for="search">Buscar en La Ronda</label>
-        <input id="search" type="search" placeholder="Buscá un libro, una guía, un mapa..." autocomplete="off">
-        <button id="clear-search" class="clear-search" type="button" aria-label="Borrar búsqueda" hidden>×</button>
+      <div class="search-panel">
+        <div class="search-icon" aria-hidden="true">⌕</div>
+        <label class="sr-only" for="search">Buscar materiales en La Ronda</label>
+        <input id="search" type="search" placeholder="Buscá un libro, una actividad, una idea..." autocomplete="off">
+        <button id="clear-search" type="button" aria-label="Borrar búsqueda" hidden>×</button>
+        <span class="search-hint">BUSCAR</span>
       </div>
-      <div class="category-grid" id="category-grid" aria-live="polite"></div>
-      <div class="catalog-area" id="catalog-area">
-        <div class="catalog-heading"><div><span class="eyebrow">Para descubrir</span><h3>Materiales de la ronda</h3></div><span class="catalog-count" id="catalog-count">Colección en preparación</span></div>
+      <div class="active-filter" id="active-filter" hidden><span id="active-filter-label"></span><button id="reset-filter" type="button">Ver todo ×</button></div>
+      <div class="door-grid" id="category-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="shelf-section" id="colecciones">
+      <div class="section-shell">
+        <div class="shelf-heading"><div><span class="eyebrow">Una vuelta por los estantes</span><h2>Pequeños tesoros<br><em>de la biblioteca.</em></h2></div><p>Materiales listos para abrir, guardar o imprimir. Cada ficha cuenta qué es y cómo podés usarlo.</p></div>
+        <div class="shelf-tabs" role="group" aria-label="Filtrar materiales">
+          <button class="shelf-tab is-active" type="button" data-shelf="all" aria-pressed="true">Todo</button>
+          <button class="shelf-tab" type="button" data-shelf="papeleria" aria-pressed="false">Para imprimir</button>
+          <button class="shelf-tab" type="button" data-shelf="naturaleza" aria-pressed="false">Naturaleza</button>
+          <button class="shelf-tab" type="button" data-shelf="infancias" aria-pressed="false">Para chicos</button>
+        </div>
+        <div class="shelf-status"><span id="catalog-count">Colección en preparación</span><span class="shelf-status-note">Archivos disponibles dentro de La Ronda</span></div>
         <div class="materials-grid" id="materials-grid"></div>
       </div>
     </section>
 
+    <section class="how-section section-shell" id="como-funciona">
+      <div class="how-heading"><span class="eyebrow">Así de sencillo</span><h2>La Ronda se disfruta<br><em>sin complicaciones.</em></h2><p>No necesitás crear una cuenta ni instalar nada. Todo está pensado para que encuentres lo que buscás sin perderte.</p></div>
+      <div class="how-steps">
+        <article class="how-step"><span class="step-number">01</span><div class="step-drawing step-search">⌕</div><h3>Elegí una puerta</h3><p>Entrá a una categoría o escribí lo que necesitás en el buscador.</p></article>
+        <article class="how-step"><span class="step-number">02</span><div class="step-drawing step-book">▤</div><h3>Miralo con calma</h3><p>Leé la descripción y abrí la vista previa para saber qué vas a encontrar.</p></article>
+        <article class="how-step"><span class="step-number">03</span><div class="step-drawing step-heart">♡</div><h3>Llevátelo y compartí</h3><p>Descargá el archivo y usalo según las condiciones indicadas en su ficha.</p></article>
+      </div>
+    </section>
+
     <section class="local-section" id="chañar">
-      <div class="local-illustration" aria-hidden="true"><span class="local-sun"></span><span class="mountain mountain-a"></span><span class="mountain mountain-b"></span><span class="river"></span><span class="local-flower">✿</span></div>
-      <div class="local-copy"><span class="eyebrow">Un lugar especial</span><h2>El rincón<br><em>chañarense</em></h2><p>Historias, paisajes, naturaleza y memoria de San Patricio del Chañar. Un espacio para cuidar y compartir lo que somos.</p><span class="coming-label">Colección local en construcción</span></div>
+      <div class="local-art"><img src="assets/ilustraciones/puerta-chañar.svg" alt="" loading="lazy"><span class="local-stamp">DE ACÁ<br>Y DE CERCA</span></div>
+      <div class="local-copy"><span class="eyebrow">Un estante con raíces</span><h2>El rincón<br><em>chañarense.</em></h2><p>Un lugar para guardar y compartir historias, paisajes, naturaleza, memoria y pequeñas cosas de San Patricio del Chañar y sus alrededores.</p><div class="local-tags"><span>🌾 Territorio</span><span>📷 Memoria</span><span>🌿 Naturaleza</span></div><span class="local-coming">Estamos preparando esta colección con cuidado.</span></div>
+    </section>
+
+    <section class="values-section section-shell">
+      <div class="values-heading"><span class="eyebrow">El espíritu de la ronda</span><h2>Una biblioteca con<br><em>las puertas abiertas.</em></h2></div>
+      <div class="values-grid">
+        <article><span>♡</span><h3>Gratis para todos</h3><p>Nada se paga para entrar, leer o descargar.</p></article>
+        <article><span>✿</span><h3>Con respeto</h3><p>Reconocemos a quienes crean y cuidamos sus derechos.</p></article>
+        <article><span>⌂</span><h3>Cerca de la gente</h3><p>Materiales claros, útiles y fáciles de encontrar.</p></article>
+        <article><span>↗</span><h3>Para compartir</h3><p>Lo que te sirve puede ayudar a otra persona.</p></article>
+      </div>
     </section>
 
     <section class="donation-section" id="colaborar">
-      <div class="donation-icon" aria-hidden="true">♡</div>
-      <div class="donation-copy"><span class="eyebrow">La cajita comunitaria</span><h2>Esta ronda la hacemos entre todos.</h2><p>Todo lo que encontrás acá es gratuito. Si este espacio te resulta valioso y querés ayudarlo a crecer, podés dejar una colaboración voluntaria. Si hoy no podés, disfrutá y compartí. También estás ayudando.</p></div>
-      <div class="donation-action"><span>Colaboración voluntaria</span><strong>ocarina.guitarra</strong><small>Alias para colaborar</small></div>
+      <div class="donation-decoration" aria-hidden="true"><span>♡</span><i>✿</i></div>
+      <div class="donation-copy"><span class="eyebrow">La cajita comunitaria</span><h2>Si te gusta esta ronda,<br><em>podés ayudarla a crecer.</em></h2><p>La biblioteca es gratuita y seguirá abierta para todos. Si alguna vez querés colaborar con su mantenimiento, podés hacerlo de manera voluntaria. Y si no podés, compartirla también es una forma hermosa de ayudar.</p></div>
+      <div class="donation-card"><span>Una ayudita voluntaria</span><strong>ocarina.guitarra</strong><small>Alias de colaboración</small><span class="donation-thanks">Gracias por estar ♡</span></div>
     </section>
+
+    <section class="closing-note"><span>✿</span><p>Hay lugar para todos en esta ronda.</p><span>✿</span></section>
   </main>
 
-  <footer class="site-footer"><a class="footer-brand" href="./">✿ la ronda</a><p>Lo que compartimos nos enriquece.</p><span>Un proyecto de Ocarina Producciones · San Patricio del Chañar, Neuquén</span><span>Consultas y derechos: canal de contacto a definir</span></footer>
+  <footer class="site-footer">
+    <div class="footer-main"><a class="footer-brand" href="./"><span>✿</span> la ronda</a><p>Lo que compartimos nos enriquece.</p><div class="footer-links"><a href="#puertas">Explorar</a><a href="#como-funciona">Cómo funciona</a><a href="#chañar">Rincón chañarense</a><a href="#colaborar">Colaborar</a></div></div>
+    <div class="footer-bottom"><span>Un proyecto de Ocarina Producciones</span><span>San Patricio del Chañar · Neuquén · Argentina</span><span>Acceso libre · Sin registro · Sin pagos</span></div>
+  </footer>
   <script src="assets/js/catalog.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
