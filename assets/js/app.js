@@ -1,7 +1,16 @@
 (() => {
   "use strict";
   const categories = window.LA_RONDA_CATEGORIES || [];
-  const catalog = (window.LA_RONDA_CATALOG || []).filter(item => item && item.verified === true && item.file && !/^https?:/i.test(item.file));
+  const isLocalFile = path => typeof path === "string" &&
+    path.startsWith("assets/archivos/") &&
+    !path.includes("..") &&
+    !/^https?:/i.test(path);
+  const catalog = (window.LA_RONDA_CATALOG || []).filter(item =>
+    item && item.verified === true &&
+    isLocalFile(item.file) &&
+    isLocalFile(item.preview) &&
+    item.title && item.author && item.license && item.credit && item.source
+  );
   const grid = document.getElementById("category-grid");
   const materials = document.getElementById("materials-grid");
   const search = document.getElementById("search");
@@ -14,19 +23,24 @@
 
   function renderCategories(query = "") {
     grid.replaceChildren();
-    const filtered = categories.filter(category => {
-      const haystack = normalize(category.name + " " + category.description);
-      return !query || haystack.includes(normalize(query));
-    });
+    const filtered = categories.filter(category => !query ||
+      normalize(category.name + " " + category.description).includes(normalize(query)));
     filtered.forEach(category => {
       const button = document.createElement("button");
       button.type = "button";
       button.className = "category-card tone-" + category.tone;
       button.setAttribute("aria-pressed", String(activeCategory === category.id));
-      button.innerHTML = '<span class="category-icon" aria-hidden="true"></span><span><strong></strong><small></small></span>';
-      button.querySelector(".category-icon").textContent = category.icon;
-      button.querySelector("strong").textContent = category.name;
-      button.querySelector("small").textContent = category.description;
+      const icon = document.createElement("span");
+      icon.className = "category-icon";
+      icon.setAttribute("aria-hidden", "true");
+      icon.textContent = category.icon;
+      const textWrap = document.createElement("span");
+      const strong = document.createElement("strong");
+      const small = document.createElement("small");
+      strong.textContent = category.name;
+      small.textContent = category.description;
+      textWrap.append(strong, small);
+      button.append(icon, textWrap);
       button.addEventListener("click", () => {
         activeCategory = activeCategory === category.id ? "" : category.id;
         renderCategories(search.value);
@@ -50,33 +64,62 @@
       const haystack = normalize([item.title, item.author, item.description, categoryLabel(item.category)].join(" "));
       return matchesCategory && (!term || haystack.includes(term));
     });
-    count.textContent = filtered.length ? filtered.length + " materiales disponibles" : "Colección en preparación";
+    count.textContent = filtered.length ? filtered.length + (filtered.length === 1 ? " material disponible" : " materiales disponibles") : "Colección en preparación";
     if (!filtered.length) {
       const empty = document.createElement("div");
       empty.className = "empty-state";
-      empty.innerHTML = '<div class="empty-icon" aria-hidden="true">🌿</div><h4></h4><p></p>';
-      empty.querySelector("h4").textContent = query || activeCategory ? "Todavía no encontramos ese material" : "Estamos preparando los primeros materiales";
-      empty.querySelector("p").textContent = query || activeCategory
-        ? "Probá con otras palabras o elegí otra carpeta. Solo incorporamos archivos completos y con derechos verificados."
-        : "La biblioteca se está armando con cuidado. Muy pronto vas a encontrar materiales reales, listos para leer, mirar y descargar desde acá.";
+      const icon = document.createElement("div");
+      icon.className = "empty-icon";
+      icon.setAttribute("aria-hidden", "true");
+      icon.textContent = "🌿";
+      const title = document.createElement("h4");
+      const paragraph = document.createElement("p");
+      title.textContent = query || activeCategory ? "Todavía no encontramos ese material" : "Estamos preparando más materiales";
+      paragraph.textContent = query || activeCategory
+        ? "Probá con otras palabras o elegí otra carpeta. Solo incorporamos archivos completos y con derechos revisados."
+        : "La biblioteca crece de a poco y con cuidado. Ya hay primeros imprimibles listos para usar.";
+      empty.append(icon, title, paragraph);
       materials.append(empty);
       return;
     }
     filtered.forEach(item => {
       const card = document.createElement("article");
       card.className = "material-card";
+      const previewLink = document.createElement("a");
+      previewLink.className = "material-preview";
+      previewLink.href = item.preview;
+      previewLink.target = "_blank";
+      previewLink.rel = "noopener";
+      previewLink.setAttribute("aria-label", "Abrir vista previa de " + item.title);
+      const image = document.createElement("img");
+      image.src = item.preview;
+      image.alt = "Vista previa: " + item.title;
+      image.loading = "lazy";
+      previewLink.append(image);
       const title = document.createElement("h4");
       title.textContent = item.title;
       const description = document.createElement("p");
       description.textContent = item.description || "";
       const meta = document.createElement("small");
-      meta.textContent = [item.author, item.format, item.size].filter(Boolean).join(" · ");
+      meta.textContent = [categoryLabel(item.category), item.format, item.size].filter(Boolean).join(" · ");
+      const credit = document.createElement("small");
+      credit.className = "material-credit";
+      credit.textContent = item.credit;
+      const actions = document.createElement("div");
+      actions.className = "material-actions";
+      const view = document.createElement("a");
+      view.className = "button button-soft";
+      view.href = item.file;
+      view.target = "_blank";
+      view.rel = "noopener";
+      view.textContent = "Ver";
       const download = document.createElement("a");
       download.className = "button button-primary";
       download.href = item.file;
       download.setAttribute("download", "");
       download.textContent = "Descargar";
-      card.append(title, description, meta, download);
+      actions.append(view, download);
+      card.append(previewLink, title, description, meta, credit, actions);
       materials.append(card);
     });
   }
